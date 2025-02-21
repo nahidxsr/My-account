@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ASCII নাম স্টাইল */
+.ascii-art {
+    font-size: 18px; /* আগের 22px থেকে ছোট করা হলো */
+    font-weight: bold;
+    text-shadow: 0 0 5px red, 0 0 10px blue, 0 0 20px limegreen;
+    margin-top: 15px; /* আগের 20px থেকে কমানো হলো */
+}
+
+/* প্রোফাইল ছবির ডিজাইন */
+.profile-card {
+    margin-top: 15px; /* আগের 20px থেকে কমানো হলো */
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 120px; /* আগের 150px থেকে ছোট করা হলো */
+    height: 120px; /* আগের 150px থেকে ছোট করা হলো */
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid limegreen; /* আগের 3px থেকে কমানো হলো */
+    box-shadow: 0 0 10px limegreen, 0 0 20px cyan; /* আগের তুলনায় হালকা করা হলো */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.08); /* আগের 1.1 থেকে সামান্য কমানো হলো */
+    box-shadow: 0 0 20px limegreen, 0 0 30px cyan;
+}
+
+/* বাটনের ব্যাকগ্রাউন্ড কালার পরিবর্তনের অ্যানিমেশন */
+@keyframes bgColorAnimation {
+    0% { background: red; }
+    25% { background: limegreen; }
+    50% { background: cyan; }
+    75% { background: magenta; }
+    100% { background: yellow; }
+}
+
+/* বাটনের বর্ডার এবং বক্স-শ্যাডো পরিবর্তনের অ্যানিমেশন */
+@keyframes borderAnimation {
+    0% { border-color: red; box-shadow: 0 0 8px red; }
+    25% { border-color: limegreen; box-shadow: 0 0 8px limegreen; }
+    50% { border-color: cyan; box-shadow: 0 0 8px cyan; }
+    75% { border-color: magenta; box-shadow: 0 0 8px magenta; }
+    100% { border-color: yellow; box-shadow: 0 0 8px yellow; }
+}
+
+/* বাটন কন্টেইনার */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* আগের তুলনায় কমানো হলো */
+    margin-top: 15px; /* আগের 20px থেকে কমানো হলো */
+}
+
+/* বাটনের ডিজাইন */
+.hack-btn {
+    color: black;
+    font-weight: bold;
+    padding: 8px 20px; /* আগের 15px 35px থেকে ছোট করা হলো */
+    font-size: 16px; /* আগের 22px থেকে ছোট করা হলো */
+    text-transform: uppercase;
+    font-family: 'Orbitron', monospace;
+    border: 2px solid limegreen; /* আগের 3px থেকে কমানো হলো */
+    cursor: pointer;
+    transition: background 1s, color 1s, transform 0.2s;
+    text-shadow: 0 0 7px white, 0 0 10px white, 0 0 15px white;
+    
+    /* ব্যাকগ্রাউন্ড এবং বর্ডার কালার পরিবর্তনের অ্যানিমেশন */
+    animation: bgColorAnimation 3s infinite alternate, 
+               borderAnimation 3s infinite alternate;
+
+    /* বাটনকে গোলাকার করা হলো */
+    border-radius: 20px; /* আগের 30px থেকে ছোট করা হলো */
+
+    /* 3D ইফেক্ট */
+    box-shadow: 0 3px 12px rgba(0, 255, 0, 0.8); /* আগের তুলনায় কমানো হলো */
+}
+
+/* হোভার করলে কালার আরও চেঞ্জ হবে */
+.hack-btn:hover {
+    background: linear-gradient(45deg, red, limegreen, cyan, magenta, yellow);
+    color: black;
+    box-shadow: 0 0 25px limegreen, 0 0 35px cyan; /* আগের 40px, 60px থেকে কমানো হলো */
+    transform: scale(1.05); /* আগের 1.1 থেকে কমানো হলো */
+    transition: all 0.3s ease-in-out;
+}
+
+/* বাটনগুলো দুই পাশে সাজানো */
+.button-pair {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* আগের 20px থেকে কমানো হলো */
+    width: 100%;
+}
